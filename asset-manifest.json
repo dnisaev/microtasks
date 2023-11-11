@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/microtasks/static/css/main.073c9b0a.css",
+    "main.js": "/microtasks/static/js/main.0b5939c3.js",
+    "index.html": "/microtasks/index.html",
+    "main.073c9b0a.css.map": "/microtasks/static/css/main.073c9b0a.css.map",
+    "main.0b5939c3.js.map": "/microtasks/static/js/main.0b5939c3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.0b5939c3.js"
+  ]
+}
