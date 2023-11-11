@@ -1,5 +1,4 @@
 import React from 'react';
-import {ButtonFilter} from "./ButtonFilter";
 
 type ButtonUniversalPropsType = {
     name: string
