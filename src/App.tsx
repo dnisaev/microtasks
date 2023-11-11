@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import {FilterUseState} from "./components/FilterUseState";
+import {ButtonFilter} from "./components/ButtonFilter";
 
 
 function App() {
 
     return (
-        <FilterUseState/>
+        <ButtonFilter/>
     );
 }
 

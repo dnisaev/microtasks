@@ -1,5 +1,5 @@
 import React from 'react';
-import {FilterUseState} from "./FilterUseState";
+import {ButtonFilter} from "./ButtonFilter";
 
 type ButtonUniversalPropsType = {
     name: string

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 type onClickFilterHandlerPropsType = "Dollars" | "Rubls" | "All"
-export const FilterUseState = () => {
+export const ButtonFilter = () => {
 
     const [money, setMoney] = useState([
         {banknots: 'Dollars', value: 100, number: ' a1234567890'},
