@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
-import {ButtonFilter} from "./components/ButtonFilter";
+import {Input} from "./components/inputLesson/Input";
+
 
 
 function App() {
 
     return (
-        <ButtonFilter/>
+        <Input/>
     );
 }
 
