@@ -1,17 +1,19 @@
 import React from 'react';
 import {Navigate, NavLink, Route, Routes} from 'react-router-dom';
 import {S} from './components/pages/_styles';
-import {PageOne} from "./components/pages/PageOne";
-import {PageTwo} from "./components/pages/PageTwo";
-import {PageThree} from "./components/pages/PageThree";
-import {Error404} from "./components/pages/Error404";
+import {Adidas} from "./components/pages/Adidas";
+import {Puma} from "./components/pages/Puma";
+import {Abibas} from "./components/pages/Abibas";
+import {Error404} from "./components/pages/404";
+import {Model} from "./components/Model";
 
 const PATH = {
-    PAGE1: '/page1',
-    PAGE2: '/page2',
-    PAGE3: '/page3',
+    ADIDAS: '/adidas',
+    PUMA: '/puma',
+    ABIBAS: '/abibas',
     ERROR: '/page/error',
-    MICROTASKS: '/microtasks'
+    MICROTASKS: '/microtasks',
+    MODEL: '/adidas/:id'
 } as const
 
 function App() {
@@ -21,22 +23,23 @@ function App() {
             <S.Body>
                 <S.Nav>
                     <S.NavWrapper>
-                        <NavLink to={PATH.PAGE1}>Page 1</NavLink>
+                        <NavLink to={PATH.ADIDAS}>Adidas</NavLink>
                     </S.NavWrapper>
                     <S.NavWrapper>
-                        <NavLink to={PATH.PAGE2}>Page 2</NavLink>
+                        <NavLink to={PATH.PUMA}>Puma</NavLink>
                     </S.NavWrapper>
                     <S.NavWrapper>
-                        <NavLink to={PATH.PAGE3}>Page 3</NavLink>
+                        <NavLink to={PATH.ABIBAS}>Abibas</NavLink>
                     </S.NavWrapper>
                 </S.Nav>
                 <S.Content>
                     <Routes>
-                        <Route path={'/'} element={<Navigate to={PATH.PAGE1}/>}/>
-                        <Route path={PATH.MICROTASKS} element={<Navigate to={PATH.PAGE1}/>}/>
-                        <Route path={PATH.PAGE1} element={<PageOne/>}/>
-                        <Route path={PATH.PAGE2} element={<PageTwo/>}/>
-                        <Route path={PATH.PAGE3} element={<PageThree/>}/>
+                        <Route path={'/'} element={<Navigate to={PATH.ADIDAS}/>}/>
+                        <Route path={PATH.MICROTASKS} element={<Navigate to={PATH.ADIDAS}/>}/>
+                        <Route path={PATH.ADIDAS} element={<Adidas/>}/>
+                        <Route path={PATH.PUMA} element={<Puma/>}/>
+                        <Route path={PATH.ABIBAS} element={<Abibas/>}/>
+                        <Route path={PATH.MODEL} element={<Model/>}/>
 
                         <Route path={'/*'} element={<Error404/>}/>
                         {/*<Route path={PATH.ERROR} element={<Error404/>}/>*/}

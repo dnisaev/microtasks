@@ -55,11 +55,26 @@ const Footer = styled.div`
   color: white;
 `
 
+const ImageWrapper = styled.div`
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+
+    img {
+        max-width: 250px;
+        margin: 10px;
+    }
+`
+
 export const S = {
     NavWrapper,
     Header,
     Body,
     Nav,
     Content,
-    Footer
+    Footer,
+    ImageWrapper
 }
