@@ -4,7 +4,7 @@ import adidasModel2 from './../../assets/Superstar_XLG_Shoes_Black_IG9777_01_sta
 import adidasModel3
     from './../../assets/PostMove_Mid_Cloudfoam_Super_Lifestyle_Basketball_Mid_Classic_Shoes_Black_GY7163_01_standard.webp';
 import {S} from './_styles';
-import {NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export type AdidasItem = {
     id: number
@@ -39,18 +39,14 @@ export const adidasArr: AdidasItem[] = [
     }
 ]
 
-const PATH = {
-    MODEL: '/adidas/model'
-}
-
 export const Adidas = () => {
 
     return (
         <div>
             <h2>ADIDAS</h2>
             <S.ImageWrapper>
-                {adidasArr.map((item) => <NavLink key={item.id} to={`/adidas/${item.id}`}>
-                    <img src={item.picture} alt={item.model}/></NavLink>
+                {adidasArr.map((item) => <Link key={item.id} to={`/adidas/${item.id}`}>
+                    <img src={item.picture} alt={item.model}/></Link>
                 )}
             </S.ImageWrapper>
             <p>
