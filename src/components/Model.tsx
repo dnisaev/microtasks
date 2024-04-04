@@ -1,22 +1,37 @@
 import React from 'react';
-import {adidasArr} from "./pages/Adidas";
+import {adidasArr, AdidasItem} from "./pages/Adidas";
 import {useParams} from "react-router-dom";
+import {pumaArr, PumaItem} from "./pages/Puma";
+
+type GlobalArray = {
+    [key: string]: PumaItem[] | AdidasItem[]
+};
+
+const globalArray: GlobalArray = {
+    puma: pumaArr,
+    adidas: adidasArr,
+}
 
 export const Model = () => {
-    const params = useParams();
-    const currentModel = adidasArr.find(model => model.id === Number(params.id))
-    console.log(params)
+    const {model, id} = useParams();
+
+    let currentModel
+
+    if (model) {
+        currentModel = globalArray[model].find(m => m.id === Number(id))
+    }
+
     return (
         <div>
             {
                 currentModel
                     ? <>
-                        <h2>{adidasArr[Number(params.id)].model}</h2>
-                        <h4>{adidasArr[Number(params.id)].collection}</h4>
-                        <h3>{adidasArr[Number(params.id)].price}</h3>
+                        <h2>{currentModel.model}</h2>
+                        <h4>{currentModel.collection}</h4>
+                        <h3>{currentModel.price}</h3>
                         <div>
-                            <img src={adidasArr[Number(params.id)].picture}
-                                 alt={adidasArr[Number(params.id)].model}
+                            <img src={currentModel.picture}
+                                 alt={currentModel.model}
                                  width={'auto'}/>
                         </div>
                     </>

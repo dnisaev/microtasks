@@ -13,7 +13,7 @@ const PATH = {
     ABIBAS: '/abibas',
     ERROR: '/page/error',
     MICROTASKS: '/microtasks',
-    MODEL: '/adidas/:id'
+    MODEL: '/:model/:id'
 } as const
 
 function App() {
