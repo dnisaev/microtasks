@@ -6,6 +6,7 @@ import {Puma} from "./components/pages/Puma";
 import {Abibas} from "./components/pages/Abibas";
 import {Error404} from "./components/pages/404";
 import {Model} from "./components/Model";
+import {Prices} from "./components/pages/Prices";
 
 const PATH = {
     ADIDAS: '/adidas',
@@ -13,7 +14,8 @@ const PATH = {
     ABIBAS: '/abibas',
     ERROR: '/page/error',
     MICROTASKS: '/microtasks',
-    MODEL: '/:model/:id'
+    MODEL: '/:model/:id',
+    PRICES: '/prices'
 } as const
 
 function App() {
@@ -31,6 +33,9 @@ function App() {
                     <S.NavWrapper>
                         <NavLink to={PATH.ABIBAS}>Abibas</NavLink>
                     </S.NavWrapper>
+                    <S.NavWrapper>
+                        <NavLink to={PATH.PRICES}>Prices for resellers</NavLink>
+                    </S.NavWrapper>
                 </S.Nav>
                 <S.Content>
                     <Routes>
@@ -40,11 +45,8 @@ function App() {
                         <Route path={PATH.PUMA} element={<Puma/>}/>
                         <Route path={PATH.ABIBAS} element={<Abibas/>}/>
                         <Route path={PATH.MODEL} element={<Model/>}/>
-
+                        <Route path={PATH.PRICES} element={<Prices/>}/>
                         <Route path={'/*'} element={<Error404/>}/>
-                        {/*<Route path={'/adidas/*'} element={<Error404/>}/>*/}
-                        {/*<Route path={PATH.ERROR} element={<Error404/>}/>*/}
-                        {/*<Route path={'/*'} element={<Navigate to={PATH.ERROR}/>}/>*/}
                     </Routes>
                 </S.Content>
             </S.Body>
